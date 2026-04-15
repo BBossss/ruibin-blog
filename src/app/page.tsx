@@ -126,11 +126,148 @@ const toolbox = [
   "个人知识沉淀与产品化思维",
 ];
 
+const stackCards = [
+  {
+    name: "Claude / Codex",
+    role: "编码 · AI Coding",
+    cost: "$20/月级别",
+    status: "已在日常使用",
+    description: "用于页面开发、代码重构、调试分析和工作流加速，是当前个人开发的第一生产力层。",
+  },
+  {
+    name: "Vercel",
+    role: "部署 · Deploy",
+    cost: "Free 起步",
+    status: "预留接入",
+    description: "未来切换到更完整的动态部署时，会优先接到 Vercel，承接 Next.js 的正式生产环境。",
+  },
+  {
+    name: "Supabase",
+    role: "后端 · Backend / DB",
+    cost: "Free 起步",
+    status: "架构已预留",
+    description: "后续会承接文章、项目、访客线索、订阅数据和个人内容后台，作为托管数据库与后端能力底座。",
+  },
+  {
+    name: "Namecheap",
+    role: "域名 · Domain",
+    cost: "$12/年级别",
+    status: "待购买",
+    description: "当站点稳定后，会切到独立域名，形成真正属于自己的长期品牌资产。",
+  },
+  {
+    name: "GitHub",
+    role: "版本控制 · Git",
+    cost: "Free",
+    status: "已接入",
+    description: "当前代码托管、版本历史与公开协作入口，已经作为源码主仓库使用。",
+  },
+  {
+    name: "Clerk",
+    role: "认证 · Auth",
+    cost: "Free 起步",
+    status: "预留接入",
+    description: "后续如果开放后台、会员区或订阅用户访问，将优先使用 Clerk 承接登录与用户身份体系。",
+  },
+  {
+    name: "Stripe",
+    role: "支付 · Payment",
+    cost: "2.9%+",
+    status: "预留接入",
+    description: "等个人产品或付费内容真正跑起来后，再接入订阅和支付闭环。",
+  },
+  {
+    name: "Resend",
+    role: "邮件 · Email",
+    cost: "Free 起步",
+    status: "预留接入",
+    description: "用于订阅通知、文章更新、联系表单自动回复和未来产品邮件能力。",
+  },
+  {
+    name: "Cloudflare",
+    role: "DNS · CDN",
+    cost: "Free",
+    status: "预留接入",
+    description: "后续绑定独立域名后，用于 DNS、CDN 和基础安全加速层。",
+  },
+  {
+    name: "Sentry",
+    role: "错误追踪 · Error",
+    cost: "Free 起步",
+    status: "预留接入",
+    description: "当站点进入真正运营状态后，会接入错误监控，避免线上问题只靠手工发现。",
+  },
+  {
+    name: "PostHog",
+    role: "分析 · Analytics",
+    cost: "Free 起步",
+    status: "预留接入",
+    description: "用于观察访问来源、页面行为、文章点击和后续产品转化，而不是只凭感觉改页面。",
+  },
+  {
+    name: "Upstash",
+    role: "Redis · Cache",
+    cost: "Free 起步",
+    status: "预留接入",
+    description: "后续如果有订阅、限流、缓存或异步任务，会作为轻量缓存/消息能力优先接入。",
+  },
+  {
+    name: "Pinecone",
+    role: "向量数据库 · Vector",
+    cost: "Free 起步",
+    status: "预留接入",
+    description: "如果后面做 AI 知识库、内容检索或个人知识问答，会用它承接向量检索层。",
+  },
+];
+
+const architecture = [
+  {
+    layer: "展示层",
+    value: "Next.js + Tailwind CSS",
+    description: "负责首页、文章、项目展示和后续内容页，当前已经跑在静态导出模式。",
+  },
+  {
+    layer: "代码与协作",
+    value: "GitHub",
+    description: "承接源码、提交历史、分支协作和后续自动化部署触发点。",
+  },
+  {
+    layer: "正式部署",
+    value: "Vercel",
+    description: "当前先用 GitHub Pages 公开上线，后续切到 Vercel 承接完整动态能力。",
+  },
+  {
+    layer: "数据库与后端",
+    value: "Supabase",
+    description: "后续放文章数据、项目数据、订阅线索与内容后台，同时承接存储与服务端能力。",
+  },
+  {
+    layer: "认证与用户",
+    value: "Clerk",
+    description: "如果未来开放后台、私密内容或会员功能，用来承接登录、会话与身份管理。",
+  },
+  {
+    layer: "支付闭环",
+    value: "Stripe + Resend",
+    description: "将来一旦有付费内容、服务或产品，就把支付和邮件通知一起补上。",
+  },
+  {
+    layer: "观测与增长",
+    value: "Sentry + PostHog + Upstash",
+    description: "分别负责错误监控、行为分析、缓存/限流，让站点从展示页进化成能运营的系统。",
+  },
+  {
+    layer: "AI 能力层",
+    value: "Pinecone",
+    description: "为后续个人知识库问答、内容语义检索和 Agent 内容能力预留扩展位。",
+  },
+];
+
 const nextSteps = [
-  "补充真实文章内容，而不是只放文章标题",
+  "补充真实文章内容，而不是只放文章计划",
   "增加项目详情页与文章详情页",
-  "接入 RSS、统计与更新日志",
-  "视情况接入独立域名与评论系统",
+  "切换到 Vercel + Supabase 的正式动态架构",
+  "接入统计、错误监控、邮件订阅与独立域名",
 ];
 
 export default function Home() {
@@ -151,11 +288,14 @@ export default function Home() {
             <a className="rounded-full border border-white/10 px-4 py-2 transition hover:border-cyan-400/40 hover:text-white" href="#topics">
               主题
             </a>
+            <a className="rounded-full border border-white/10 px-4 py-2 transition hover:border-cyan-400/40 hover:text-white" href="#stack">
+              Tool Stack
+            </a>
+            <a className="rounded-full border border-white/10 px-4 py-2 transition hover:border-cyan-400/40 hover:text-white" href="#architecture">
+              架构
+            </a>
             <a className="rounded-full border border-white/10 px-4 py-2 transition hover:border-cyan-400/40 hover:text-white" href="#writing">
               文章计划
-            </a>
-            <a className="rounded-full border border-white/10 px-4 py-2 transition hover:border-cyan-400/40 hover:text-white" href="#projects">
-              项目
             </a>
             <a className="rounded-full border border-white/10 px-4 py-2 transition hover:border-cyan-400/40 hover:text-white" href="#contact">
               联系
@@ -180,16 +320,16 @@ export default function Home() {
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <a
-                href="#writing"
+                href="#stack"
                 className="rounded-full bg-white px-5 py-3 text-sm font-medium text-zinc-950 transition hover:bg-cyan-200"
               >
-                看我准备写什么
+                看完整 Tool Stack
               </a>
               <a
-                href="#projects"
+                href="#architecture"
                 className="rounded-full border border-white/15 px-5 py-3 text-sm font-medium text-white transition hover:border-cyan-400/40 hover:bg-white/5"
               >
-                查看项目与方向
+                查看下一步架构
               </a>
             </div>
           </div>
@@ -282,6 +422,74 @@ export default function Home() {
           </div>
         </section>
 
+        <section id="stack" className="mt-20">
+          <p className="text-sm uppercase tracking-[0.28em] text-cyan-300/70">Tool Stack</p>
+          <h3 className="mt-3 text-3xl font-semibold text-white">按照截图思路补齐后的完整组件栈</h3>
+          <p className="mt-4 max-w-4xl text-sm leading-8 text-zinc-400">
+            这部分我已经按你发的截图把主要组件都补进来了。当前真正落地并在运行的，是页面、代码仓库和公开部署；其余像数据库、认证、支付、邮件、监控、分析等，都已经在站点架构里预留了正式接入位。
+          </p>
+          <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+            {stackCards.map((item) => (
+              <article key={item.name} className="rounded-[28px] border border-white/10 bg-white/5 p-6 transition hover:border-cyan-400/30 hover:bg-white/[0.06]">
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <h4 className="text-xl font-semibold text-white">{item.name}</h4>
+                    <p className="mt-2 text-sm text-cyan-200/85">{item.role}</p>
+                  </div>
+                  <span className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs text-zinc-300">
+                    {item.cost}
+                  </span>
+                </div>
+                <div className="mt-4 inline-flex rounded-full border border-cyan-400/20 bg-cyan-400/10 px-3 py-1 text-xs text-cyan-200">
+                  {item.status}
+                </div>
+                <p className="mt-4 text-sm leading-7 text-zinc-400">{item.description}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section id="architecture" className="mt-20 grid gap-8 lg:grid-cols-[1fr_1fr]">
+          <div className="rounded-[32px] border border-white/10 bg-black/20 p-7 sm:p-8">
+            <p className="text-sm uppercase tracking-[0.28em] text-cyan-300/70">Architecture</p>
+            <h3 className="mt-3 text-3xl font-semibold text-white">这个站下一步会如何从“展示页”进化成“完整系统”</h3>
+            <div className="mt-8 space-y-5">
+              {architecture.map((item) => (
+                <div key={item.layer} className="rounded-2xl border border-white/8 bg-white/[0.03] p-5">
+                  <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
+                    <h4 className="text-lg font-semibold text-white">{item.layer}</h4>
+                    <span className="text-sm text-cyan-200/85">{item.value}</span>
+                  </div>
+                  <p className="mt-3 text-sm leading-7 text-zinc-400">{item.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="grid gap-5">
+            <div className="rounded-[32px] border border-white/10 bg-gradient-to-b from-white/8 to-white/[0.03] p-7 sm:p-8">
+              <p className="text-sm uppercase tracking-[0.28em] text-cyan-300/70">Current State</p>
+              <h3 className="mt-3 text-3xl font-semibold text-white">现在已经落地了什么</h3>
+              <div className="mt-8 space-y-5 text-sm leading-8 text-zinc-300">
+                <p>1. 个人站点首页已经搭好，并且已经公开部署上线。</p>
+                <p>2. 页面结构、视觉风格、SEO 基础、公开地址和代码仓库已经具备。</p>
+                <p>3. 已经预留出向正式动态架构迁移的方向，后续不需要推倒重来。</p>
+              </div>
+            </div>
+
+            <div className="rounded-[32px] border border-white/10 bg-white/5 p-7 sm:p-8">
+              <p className="text-sm uppercase tracking-[0.28em] text-cyan-300/70">Next on Site</p>
+              <div className="mt-6 space-y-4">
+                {nextSteps.map((step) => (
+                  <div key={step} className="rounded-2xl border border-white/8 bg-white/[0.03] px-4 py-4 text-sm leading-7 text-zinc-300">
+                    {step}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section id="writing" className="mt-20 grid gap-8 lg:grid-cols-[1.08fr_0.92fr]">
           <div className="rounded-[32px] border border-white/10 bg-black/20 p-7 sm:p-8">
             <p className="text-sm uppercase tracking-[0.28em] text-cyan-300/70">Writing Plan</p>
@@ -324,13 +532,10 @@ export default function Home() {
             </div>
 
             <div className="rounded-[32px] border border-white/10 bg-white/5 p-7 sm:p-8">
-              <p className="text-sm uppercase tracking-[0.28em] text-cyan-300/70">Next on Site</p>
-              <div className="mt-6 space-y-4">
-                {nextSteps.map((step) => (
-                  <div key={step} className="rounded-2xl border border-white/8 bg-white/[0.03] px-4 py-4 text-sm leading-7 text-zinc-300">
-                    {step}
-                  </div>
-                ))}
+              <p className="text-sm uppercase tracking-[0.28em] text-cyan-300/70">Why This Matters</p>
+              <div className="mt-6 space-y-4 text-sm leading-8 text-zinc-300">
+                <p>如果站点只停在漂亮首页，那它更像一个模板；只有把文章、项目、数据库、监控和增长链路逐步补齐，它才会真正变成我的长期资产。</p>
+                <p>你刚刚让我按截图组件继续搭，这一步的意义就是：把“未来要接什么”明确写进站点本身，让这个博客不只是展示结果，也展示演进路线。</p>
               </div>
             </div>
           </div>
