@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 黄瑞彬个人博客
 
-## Getting Started
+一个基于 Next.js 16 + Tailwind CSS 构建的个人博客/个人主页，用来展示个人介绍、主题方向、文章精选、项目展示与成长时间线。
 
-First, run the development server:
+## 本地开发
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+打开 http://localhost:3000 查看。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 生产构建
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+```
 
-## Learn More
+项目使用静态导出，可部署到 GitHub Pages，也兼容后续切换到 Vercel。
 
-To learn more about Next.js, take a look at the following resources:
+## 当前线上地址
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+部署完成后默认访问：
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- GitHub Pages: https://bbossss.github.io/ruibin-blog/
 
-## Deploy on Vercel
+## 技术栈
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Next.js 16 (App Router)
+- React 19
+- Tailwind CSS 4
+- TypeScript
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 后续可扩展方向
+
+- 接入 Markdown/MDX 文章系统
+- 增加项目详情页
+- 增加文章详情页与 RSS
+- 接入评论、统计与监控

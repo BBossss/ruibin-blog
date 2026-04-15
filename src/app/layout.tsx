@@ -12,8 +12,10 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteUrl = "https://bbossss.github.io/ruibin-blog/";
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://ruibin-blog.vercel.app"),
+  metadataBase: new URL(siteUrl),
   title: {
     default: "黄瑞彬｜个人博客",
     template: "%s｜黄瑞彬",
@@ -25,7 +27,7 @@ export const metadata: Metadata = {
     title: "黄瑞彬｜个人博客",
     description:
       "记录后端工程、AI Agent、自动化工作流与个人产品实践的个人站点。",
-    url: "https://ruibin-blog.vercel.app",
+    url: siteUrl,
     siteName: "黄瑞彬｜个人博客",
     locale: "zh_CN",
     type: "website",
