@@ -180,6 +180,7 @@ function HomepagePage({ content }: HomepagePageProps) {
     architecture,
     nextSteps,
   } = content;
+  const [isShowcasePlaying, setIsShowcasePlaying] = useState(false);
 
   return (
     <main className="min-h-screen bg-[radial-gradient(circle_at_top,#1f2a44_0%,#0b1020_35%,#050816_70%,#03060f_100%)] text-zinc-100">
@@ -282,25 +283,55 @@ function HomepagePage({ content }: HomepagePageProps) {
               <span className="rounded-full border border-white/10 bg-white/[0.04] px-4 py-2">Motion Showcase</span>
             </div>
             <p className="mt-6 text-sm leading-7 text-zinc-400">
-              视频会静音自动播放，也支持手动播放、暂停和全屏查看。后面如果你要继续做个人品牌视频、项目片头或者文章封面动效，也能直接复用这套风格。
+              现在改成了点击播放：先展示封面卡片，点击中间按钮后再开始播放视频。这样在 GitHub Pages 和移动端浏览器里会更稳定，也更符合首页展示区的体验。
             </p>
           </div>
 
           <div className="overflow-hidden rounded-[32px] border border-white/10 bg-black/30 p-3 shadow-2xl shadow-cyan-950/20">
             <div className="overflow-hidden rounded-[24px] border border-white/10 bg-[#020617]">
-              <video
-                className="aspect-video h-full w-full"
-                src="/ruibin-blog/blog-site-intro.mp4"
-                poster="/ruibin-blog/blog-poster.png"
-                autoPlay
-                muted
-                loop
-                playsInline
-                controls
-                preload="metadata"
-              >
-                你的浏览器暂不支持 video 标签，可以直接下载视频查看。
-              </video>
+              {isShowcasePlaying ? (
+                <video
+                  className="aspect-video h-full w-full"
+                  src="/ruibin-blog/blog-site-intro.mp4"
+                  poster="/ruibin-blog/blog-poster.png"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  controls
+                  preload="metadata"
+                >
+                  你的浏览器暂不支持 video 标签，可以直接下载视频查看。
+                </video>
+              ) : (
+                <button
+                  type="button"
+                  onClick={() => setIsShowcasePlaying(true)}
+                  className="group relative block aspect-video h-full w-full overflow-hidden bg-[#020617] text-left"
+                  aria-label="播放博客展示动画"
+                >
+                  <img
+                    src="/ruibin-blog/blog-poster.png"
+                    alt="博客展示动画封面"
+                    className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.02] group-hover:opacity-90"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#020617]/70 via-[#020617]/20 to-transparent" />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="flex h-24 w-24 items-center justify-center rounded-full border border-cyan-300/40 bg-cyan-400/15 text-white shadow-2xl shadow-cyan-500/20 backdrop-blur group-hover:bg-cyan-400/20">
+                      <div className="ml-1 h-0 w-0 border-y-[14px] border-y-transparent border-l-[22px] border-l-white" />
+                    </div>
+                  </div>
+                  <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-6">
+                    <div>
+                      <p className="text-xs uppercase tracking-[0.28em] text-cyan-200/75">Motion Showcase</p>
+                      <p className="mt-2 text-xl font-semibold text-white">点击播放博客品牌动画</p>
+                    </div>
+                    <span className="rounded-full border border-white/15 bg-black/20 px-4 py-2 text-sm text-zinc-200 backdrop-blur">
+                      10s · MP4
+                    </span>
+                  </div>
+                </button>
+              )}
             </div>
           </div>
         </section>
