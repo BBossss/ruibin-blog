@@ -201,6 +201,9 @@ function HomepagePage({ content }: HomepagePageProps) {
             <a className="rounded-full border border-white/10 px-4 py-2 transition hover:border-cyan-400/40 hover:text-white" href="#stack">
               Tool Stack
             </a>
+            <a className="rounded-full border border-white/10 px-4 py-2 transition hover:border-cyan-400/40 hover:text-white" href="#showcase">
+              展示
+            </a>
             <a className="rounded-full border border-white/10 px-4 py-2 transition hover:border-cyan-400/40 hover:text-white" href="#architecture">
               架构
             </a>
@@ -262,6 +265,42 @@ function HomepagePage({ content }: HomepagePageProps) {
               <p className="mt-3 text-sm leading-7 text-cyan-50/80">
                 这个站点不会只是个人介绍页，而会逐步补齐文章、项目、方法论、实验记录和后续产品入口。
               </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="showcase" className="mt-12 grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:items-center">
+          <div className="rounded-[32px] border border-cyan-400/15 bg-gradient-to-b from-cyan-400/10 to-white/[0.03] p-7 sm:p-8">
+            <p className="text-sm uppercase tracking-[0.28em] text-cyan-300/70">Showcase</p>
+            <h3 className="mt-3 text-3xl font-semibold text-white">把博客本身做成首页可见的动态展示</h3>
+            <p className="mt-5 text-sm leading-8 text-zinc-300 sm:text-base">
+              这里放的是基于我个人博客视觉语言专门制作的开场动画：延续深蓝背景、青蓝高亮、个人品牌标识和 AI Agent 主题，让首页除了文字介绍之外，也能先用一段动态画面传达这个站点的气质。
+            </p>
+            <div className="mt-6 flex flex-wrap gap-3 text-sm text-zinc-300">
+              <span className="rounded-full border border-white/10 bg-white/[0.04] px-4 py-2">Personal Site</span>
+              <span className="rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-2 text-cyan-200">AI Agent</span>
+              <span className="rounded-full border border-white/10 bg-white/[0.04] px-4 py-2">Motion Showcase</span>
+            </div>
+            <p className="mt-6 text-sm leading-7 text-zinc-400">
+              视频会静音自动播放，也支持手动播放、暂停和全屏查看。后面如果你要继续做个人品牌视频、项目片头或者文章封面动效，也能直接复用这套风格。
+            </p>
+          </div>
+
+          <div className="overflow-hidden rounded-[32px] border border-white/10 bg-black/30 p-3 shadow-2xl shadow-cyan-950/20">
+            <div className="overflow-hidden rounded-[24px] border border-white/10 bg-[#020617]">
+              <video
+                className="aspect-video h-full w-full"
+                src="/blog-site-intro.mp4"
+                poster="/blog-poster.png"
+                autoPlay
+                muted
+                loop
+                playsInline
+                controls
+                preload="metadata"
+              >
+                你的浏览器暂不支持 video 标签，可以直接下载视频查看。
+              </video>
             </div>
           </div>
         </section>
