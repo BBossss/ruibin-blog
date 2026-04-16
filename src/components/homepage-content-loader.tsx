@@ -290,8 +290,8 @@ function HomepagePage({ content }: HomepagePageProps) {
             <div className="overflow-hidden rounded-[24px] border border-white/10 bg-[#020617]">
               <video
                 className="aspect-video h-full w-full"
-                src="/blog-site-intro.mp4"
-                poster="/blog-poster.png"
+                src="./blog-site-intro.mp4"
+                poster="./blog-poster.png"
                 autoPlay
                 muted
                 loop
